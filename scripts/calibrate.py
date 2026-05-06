@@ -41,7 +41,7 @@ def log(msg: str):
 
 def load_history(path: str) -> list[dict]:
     prompts = []
-    with open(path) as f:
+    with open(path, encoding="utf-8", errors="replace") as f:
         for line in f:
             try:
                 prompts.append(json.loads(line))
@@ -373,7 +373,7 @@ def main():
     # Write
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(output)
 
     line_count = output.count("\n") + 1

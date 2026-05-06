@@ -33,7 +33,7 @@ def log(msg: str):
 def load_history(path: str, since_ts: int) -> list[dict]:
     """Load only prompts after since_ts (ms epoch)."""
     prompts = []
-    with open(path) as f:
+    with open(path, encoding="utf-8", errors="replace") as f:
         for line in f:
             try:
                 obj = json.loads(line)
@@ -48,7 +48,7 @@ def load_state(path: str) -> str:
     """Load state.md as raw text."""
     p = Path(path)
     if p.exists():
-        return p.read_text()
+        return p.read_text(encoding="utf-8")
     return ""
 
 
@@ -326,7 +326,7 @@ def main():
 
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(output)
 
     line_count = output.count("\n") + 1

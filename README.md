@@ -198,4 +198,4 @@ MIT
 
 ## Credits
 
-Built by [Vince Hopf](https://github.com/vincenthopf). Based on [The Farmer Was Replaced](https://thefarmerwasreplaced.com/) by Daniel Springwald.
+Built by [Vince](https://github.com/vincenthopf). Based on [The Farmer Was Replaced](https://thefarmerwasreplaced.com/) by Daniel Springwald.
